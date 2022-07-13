@@ -14,7 +14,42 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
+
+    if (typeof (str) != 'string') {
+        return false;
+    }
+
+    const excludedCharacters = '!.,;:@<>';
+
+    const strUP = str.toUpperCase();
+    const length = str.length;
+    let start = 0;
+    let end = length - 1;
+    let fromStart = '';
+    let fromEnd = '';
+    while (start != end) {
+        fromStart = strUP[start];
+        if (excludedCharacters.includes(fromStart)) {
+            start += 1;
+            continue;
+        }
+        fromEnd = strUP[end];
+        if (excludedCharacters.includes(fromEnd)) {
+            end += -1;
+            continue;
+        }
+
+        if (fromStart != fromEnd) {
+            return false;
+        }
+        isPalindrome = true;
+        start += 1;
+        end += -1;
+    }
+
+    return true;
+
+    // return str.toUpperCase().split('').reverse().join('') == str.toUpperCase();
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
