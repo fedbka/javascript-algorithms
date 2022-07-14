@@ -8,7 +8,10 @@
 */
 
 function uniq(arr) {
-    // Напишите код здесь
+    if (!Array.isArray(arr)) return [];
+    
+    return arr.reduce((uniqs, item) => uniqs.includes(item) ? uniqs : uniqs.concat(item), new Array);
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
