@@ -10,13 +10,31 @@
 */
 
 function isPrime(n) {
-    // Напишите код здесь
+
+    let divider = 1;
+    let dividerCounter = 0;
+
+    while (divider <= n) {
+
+        if (n % divider == 0) {
+            dividerCounter += 1;
+        }
+
+        if (dividerCounter > 2) break;
+
+        divider += 1;
+
+    }
+
+    return dividerCounter == 2;
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(isPrime(0)); // false
 console.log(isPrime(1)); // false
+console.log(isPrime(2)); // true
 console.log(isPrime(3)); // true
 console.log(isPrime(6)); // false
 console.log(isPrime(17)); // true
