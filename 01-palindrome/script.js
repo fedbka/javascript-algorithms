@@ -14,7 +14,46 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
+
+    if (typeof (str) != 'string') {
+        return false;
+    }
+
+    const excludedCharacters = ' =+-!.,;:@<>';
+
+    const strUP = str.toUpperCase();
+    const length = str.length;
+    let start = 0;
+    let end = length - 1;
+    let fromStart = '';
+    let fromEnd = '';
+    
+    while (start != end && start < length && end > 0) {
+        
+        fromStart = strUP[start];
+        fromEnd = strUP[end];
+
+        if (excludedCharacters.includes(fromStart)) {
+            start += 1;
+            continue;
+        }
+        
+        if (excludedCharacters.includes(fromEnd)) {
+            end += -1;
+            continue;
+        }
+
+        if (fromStart != fromEnd) {
+            return false;
+        }
+
+        start += 1;
+        end += -1;
+    }
+
+    return true;
+
+    // return str.toUpperCase().split('').reverse().join('') == str.toUpperCase();
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
@@ -22,6 +61,7 @@ function palindrome(str) {
 console.log(palindrome('топот')); // должно быть true
 console.log(palindrome('Saippuakivikauppias')); // true
 console.log(palindrome('привет')); // false
+console.log(palindrome('О, лета тело!'));
 
 /*
  * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,
