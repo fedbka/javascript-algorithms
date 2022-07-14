@@ -16,7 +16,6 @@
 function palindrome(str) {
 
     const upStr = str.toUpperCase().replace(/\p{P}| +/gu, '');
-    console.log(upStr);
     return upStr.split('').reverse().join('') === upStr;
 
 }
