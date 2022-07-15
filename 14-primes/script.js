@@ -6,8 +6,37 @@
  * 
 */
 
+function isPrime(n) {
+
+    let divider = 1;
+    let dividerCounter = 0;
+
+    while (divider <= n) {
+
+        if (n % divider == 0) {
+            dividerCounter += 1;
+        }
+
+        if (dividerCounter > 2) break;
+
+        divider += 1;
+
+    }
+
+    return dividerCounter == 2;
+
+}
+
 function primes(num) {
-    // Напишите код здесь
+    
+    const arr = [];
+    let i = 2;
+    while ( i <= num) {
+        if (isPrime(i)) arr.push(i);
+        i += 1;
+    }
+
+    return arr;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

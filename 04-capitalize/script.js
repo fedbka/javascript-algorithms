@@ -7,7 +7,12 @@
 */
 
 function capitalize(str) {
-    // Напишите код здесь
+    
+    if (typeof(str) != 'string') return '';
+
+
+    return str.split('').reduce((prev, item, index) => prev + (index == 0 || prev.endsWith(' ') ? item.toUpperCase() : item), '');
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

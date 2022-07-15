@@ -11,7 +11,28 @@
 */
 
 function fizzBuzz(num) {
-    // Напишите код здесь
+    
+    number = Number(num);
+
+    if (!number) return;
+
+    let i = 1;
+
+    while ( i <= number ) {
+        
+        if (! (i % 15)) {
+            console.log('fizzbuzz');
+        } else if (!(i % 5)) {
+            console.log('buzz');
+        } else if (!(i % 3 )) {
+            console.log('fizz');
+        } else {
+            console.log(i);
+        }
+        
+        i += 1;
+    }
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
