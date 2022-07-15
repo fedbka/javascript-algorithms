@@ -9,7 +9,20 @@
 */
 
 function sumOfTwo(arr, sum) {
-    // Напишите код здесь
+    
+    if (!Array.isArray(arr)) return false;
+
+    const terms = new Set;
+    
+    for (const item of arr) {
+        if (terms.has(item)) return true;
+
+        terms.add(sum - item);
+
+    }
+
+    return false;
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
