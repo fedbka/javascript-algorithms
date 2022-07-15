@@ -8,7 +8,11 @@
 */
 
 function intersection(arr1, arr2) {
-    // Напишите код здесь
+    
+    if (!Array.isArray(arr1) || !Array.isArray(arr2)) return [];
+    
+    return [...new Set(arr1.filter(item => arr2.includes(item)))];
+
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
