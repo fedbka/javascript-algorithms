@@ -8,11 +8,13 @@
 
 function countZeros(n) {
     
-    if (n < 10) return 0;
+    let zeroCount = 0;
 
-    const endsWithZero = n - (n % 10);
+    for (let number = 1; number <= n; number++) {
+        zeroCount += ((number + '').split('0').length - 1)
+    }
 
-    return ((endsWithZero + '').split('0').length - 1) + countZeros(endsWithZero - 10);
+    return zeroCount;
 
 }
 
