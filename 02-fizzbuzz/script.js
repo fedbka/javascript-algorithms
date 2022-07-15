@@ -12,7 +12,7 @@
 
 function fizzBuzz(num) {
     
-    number = Number(num);
+    const number = Number(num);
 
     if (!number) return;
 
